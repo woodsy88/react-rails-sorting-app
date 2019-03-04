@@ -3,6 +3,11 @@ class Api::V1::FruitsController < ApplicationController
     render json: Fruit.all
   end
 
+  def show
+    fruit = Fruit.find(params[:id])
+    render json: fruit
+  end
+
   def create
     fruit = Fruit.create(fruit_params)
     render json: fruit
